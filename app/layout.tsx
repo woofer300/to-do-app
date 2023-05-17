@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
 
-const montserrat = Montserrat({});
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Home",

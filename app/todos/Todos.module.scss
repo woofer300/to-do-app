@@ -1,0 +1,133 @@
+@use "../variables";
+
+.todo {
+    display: flex;
+    align-items: center;
+    background-color: variables.$todos;
+    border-radius: 4px;
+    padding: 0.75rem 0.5rem 0.75rem 0.75rem;
+    margin: 0.75rem;
+    min-height: 2rem;
+
+    p {
+        color: initial;
+        margin: 0 0.75rem 0 0;
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    svg {
+        flex-shrink: 0;
+        color: black;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.25rem;
+        $size-transition-duration: 0.25s;
+        $color-transition-duration: 0.1s;
+        transition:
+                width $size-transition-duration ease-in-out,
+                height $size-transition-duration ease-in-out,
+                margin-right $size-transition-duration ease-in-out,
+                color $color-transition-duration linear;
+
+        &:hover {
+            color: #d60007;
+            width: 2.0rem;
+            height: 2.0rem;
+            margin-right: 0;
+        }
+    }
+}
+
+.todoAdder {
+    margin: 0.75rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form {
+        flex-grow: 1;
+        margin: 0.25rem;
+        padding-right: 0.25rem;
+
+        input {
+            font-size: 1rem;
+            border-style: none;
+            border-radius: 13px;
+            min-height: 2.25rem;
+            width: 100%;
+            padding: 0 0.5rem;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    button {
+        font-size: 1rem;
+        font-weight: bold;
+        background-color: variables.$accent;
+        color: variables.$text;
+        border-radius: 5px;
+        border-style: none;
+        text-align: center;
+        padding: 0.5rem 0.75rem;
+        margin: 0.25rem;
+        transition: background-color 150ms;
+
+        &:hover {
+            background-color: lighten(variables.$accent, 20%);
+        }
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .todoAdder {
+        min-width: 45%;
+    }
+
+    .todo {
+        min-width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+    .todoAdder {
+        min-width: 50%;
+    }
+
+    .todo {
+        min-width: 55%;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .todoAdder {
+        min-width: 60%;
+    }
+
+    .todo {
+        min-width: 60%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .todoAdder {
+        min-width: 70%;
+    }
+
+    .todo {
+        min-width: 70%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .todoAdder {
+        min-width: 90%;
+    }
+
+    .todo {
+        min-width: 90%;
+    }
+}
