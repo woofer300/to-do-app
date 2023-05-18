@@ -11,7 +11,6 @@ export default function TodoAdder({
   function handleAdd(e: FormEvent) {
     e.preventDefault();
     if (/\S/.test(todoInputValue)) {
-      console.log("Yay!");
       onAdd(todoInputValue);
       setTodoInputValue("");
     }

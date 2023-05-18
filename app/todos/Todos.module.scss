@@ -3,7 +3,7 @@
 .todo {
     display: flex;
     align-items: center;
-    background-color: variables.$todos;
+    background-color: variables.$blue;
     border-radius: 4px;
     padding: 0.75rem 0.5rem 0.75rem 0.75rem;
     margin: 0.75rem;
@@ -11,6 +11,7 @@
 
     p {
         color: initial;
+        font-weight: 500;
         margin: 0 0.75rem 0 0;
         flex-grow: 1;
         text-align: left;
@@ -80,6 +81,19 @@
             background-color: lighten(variables.$accent, 20%);
         }
     }
+}
+
+
+.blue {
+    background-color: variables.$blue;
+}
+
+.green {
+    background-color: variables.$green;
+}
+
+.purple {
+    background-color: variables.$purple;
 }
 
 @media only screen and (min-width: 1400px) {

@@ -31,6 +31,17 @@ nav {
     align-items: center;
 }
 
-h1, p {
+h1 {
+    margin: 3.5rem;
+    font-size: 52px;
+    color: variables.$text;
+}
+
+h2 {
+    font-size: 2rem;
+    color: variables.$text;
+}
+
+p {
     color: variables.$text;
 }

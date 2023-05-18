@@ -6,7 +6,10 @@ import "./globals.scss";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: {
+    template: "%s | woo-dos",
+    default: "woo-dos",
+  },
 };
 
 export default function RootLayout({
