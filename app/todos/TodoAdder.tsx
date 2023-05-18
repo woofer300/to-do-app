@@ -1,21 +1,25 @@
 import styles from "./Todos.module.scss";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 export default function TodoAdder({
-  onAddClick,
+  onAdd,
 }: {
-  onAddClick: (name: string) => void;
+  onAdd: (name: string) => void;
 }) {
   const [todoInputValue, setTodoInputValue] = useState("");
 
-  function handleAddClick() {
-    onAddClick(todoInputValue);
-    setTodoInputValue("");
+  function handleAdd(e: FormEvent) {
+    e.preventDefault();
+    if (/\S/.test(todoInputValue)) {
+      console.log("Yay!");
+      onAdd(todoInputValue);
+      setTodoInputValue("");
+    }
   }
 
   return (
     <div className={styles.todoAdder}>
-      <form>
+      <form onSubmit={handleAdd}>
         <input
           placeholder="Add a todo..."
           value={todoInputValue}
@@ -24,7 +28,7 @@ export default function TodoAdder({
           }
         />
       </form>
-      <button onClick={handleAddClick}>Add</button>
+      <button onClick={handleAdd}>Add</button>
     </div>
   );
 }
